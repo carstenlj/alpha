@@ -1,19 +1,20 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="CssPlayground.Default" %>
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-	<link rel="stylesheet" type="text/css" href="styles/main/main.min.css" />
-	<link rel="stylesheet" type="text/css" href="styles/main/input.min.css" />
-	<link rel="stylesheet" type="text/css" href="styles/plugins/colorPickify.min.css" />
-	<script src="js/jquery-1.10.2.min.js"></script>
-	<script src="js/main.js"></script>
-	<script src="js/jquery-colorpickify.js"></script>
+	<!-- MASTER STYLE AND SCRIPT -->
+	<link rel="stylesheet" type="text/css" href="master/style/main.min.css" />
+	<script src="master/js/jquery-1.10.2.min.js"></script>
+	<script src="master/js/main.js"></script>
+
+	<!-- COLOR PICKER STYLE AND SCRIPT -->
+	<link rel="stylesheet" type="text/css" href="components/jquery-colorpicker/colorPickify.min.css" />
+	<script src="components/jquery-colorpicker/jquery-colorpickify.js"></script>
 </head>
 <body>
 	<script>
+		// Initialization
 		$(function () {
 			$('.color-picker').colorPickify();
 		});
@@ -49,17 +50,3 @@
 	</div>
 </body>
 </html>
-
-<!--
-		Headers
-		Subheader
-		Text
-
-		Single line text (clear button, mock text)
-		Buttons
-		Multiline
-		Checkboxes
-		Dropdowns
-
-		Validation
--->

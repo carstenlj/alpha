@@ -38,110 +38,73 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.ApplicationServices" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Web.Services" />
-    <Reference Include="System.EnterpriseServices" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="core\img\arrow_down_12x12.png" />
-    <Content Include="core\img\arrow_down_24x24.png" />
-    <Content Include="core\img\attention16.png" />
-    <Content Include="core\img\attention32.png" />
-    <Content Include="core\img\bgGradient.png" />
-    <Content Include="core\img\check_12x10.png" />
-    <Content Include="core\img\check_24x19.png" />
-    <Content Include="core\img\color-picker-adjust.png" />
-    <Content Include="core\img\color-picker-arrows.png" />
-    <Content Include="core\img\color-picker-circle.png" />
-    <Content Include="core\img\hueBar.png" />
-    <Content Include="core\img\info_12x24.png" />
-    <Content Include="core\img\info_16x32.png" />
-    <Content Include="core\img\info_8x16.png" />
-    <Content Include="core\img\list_12x11.png" />
-    <Content Include="core\img\list_24x21.png" />
-    <Content Include="core\img\wrench_12x12.png" />
-    <Content Include="core\img\wrench_24x24.png" />
-    <Content Include="core\img\x_11x11.png" />
-    <Content Include="core\img\x_21x21.png" />
-    <Content Include="core\img\x_blue21x21.png" />
-    <Content Include="core\js\jquery-1.10.2.min.js" />
-    <Content Include="core\js\jquery-colorpickify.js" />
-    <Content Include="core\js\jquery-dialog.js" />
-    <Content Include="core\js\jquery-dropify.js" />
-    <Content Include="core\js\jquery-treeify.js" />
-    <Content Include="core\js\main.js" />
-    <Content Include="core\styles\main\globals.css">
+    <Content Include="default.html" />
+    <Content Include="img\arrow_down_12x12.png" />
+    <Content Include="img\arrow_down_24x24.png" />
+    <Content Include="img\attention16.png" />
+    <Content Include="img\attention32.png" />
+    <Content Include="img\bgGradient.png" />
+    <Content Include="img\check_12x10.png" />
+    <Content Include="img\check_24x19.png" />
+    <Content Include="img\color-picker-adjust.png" />
+    <Content Include="img\color-picker-arrows.png" />
+    <Content Include="img\color-picker-circle.png" />
+    <Content Include="img\hueBar.png" />
+    <Content Include="img\info_12x24.png" />
+    <Content Include="img\info_16x32.png" />
+    <Content Include="img\info_8x16.png" />
+    <Content Include="img\list_12x11.png" />
+    <Content Include="img\list_24x21.png" />
+    <Content Include="img\wrench_12x12.png" />
+    <Content Include="img\wrench_24x24.png" />
+    <Content Include="img\x_11x11.png" />
+    <Content Include="img\x_21x21.png" />
+    <Content Include="img\x_blue21x21.png" />
+    <Content Include="js\jquery-1.10.2.min.js" />
+    <Content Include="js\jquery-colorpickify.js" />
+    <Content Include="js\main.js" />
+    <Content Include="styles\main\globals.css">
       <DependentUpon>globals.less</DependentUpon>
     </Content>
-    <Content Include="core\styles\main\globals.min.css">
+    <Content Include="styles\main\globals.min.css">
       <DependentUpon>globals.less</DependentUpon>
     </Content>
-    <Content Include="core\styles\main\input.css">
+    <Content Include="styles\main\input.css">
       <DependentUpon>input.less</DependentUpon>
     </Content>
-    <Content Include="core\styles\main\input.min.css">
+    <Content Include="styles\main\input.min.css">
       <DependentUpon>input.less</DependentUpon>
     </Content>
-    <Content Include="core\styles\main\main.css">
+    <Content Include="styles\main\main.css">
       <DependentUpon>main.less</DependentUpon>
     </Content>
-    <Content Include="core\styles\main\main.min.css">
+    <Content Include="styles\main\main.min.css">
       <DependentUpon>main.less</DependentUpon>
     </Content>
-    <Content Include="core\styles\main\mixins.css">
+    <Content Include="styles\main\mixins.css">
       <DependentUpon>mixins.less</DependentUpon>
     </Content>
-    <Content Include="core\styles\main\mixins.min.css">
+    <Content Include="styles\main\mixins.min.css">
       <DependentUpon>mixins.less</DependentUpon>
     </Content>
-    <Content Include="core\styles\plugins\colorPickify.css">
+    <Content Include="styles\plugins\colorPickify.css">
       <DependentUpon>colorPickify.less</DependentUpon>
     </Content>
-    <Content Include="core\styles\plugins\colorPickify.min.css">
+    <Content Include="styles\plugins\colorPickify.min.css">
       <DependentUpon>colorPickify.less</DependentUpon>
     </Content>
-    <Content Include="Default.aspx" />
-    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="styles\main\globals.less" />
+    <Content Include="styles\main\input.less" />
+    <Content Include="styles\main\main.less" />
+    <Content Include="styles\main\mixins.less" />
+    <Content Include="styles\plugins\colorPickify.less" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="core\styles\main\globals.less" />
-    <Content Include="core\styles\main\input.less" />
-    <Content Include="core\styles\main\main.less" />
-    <Content Include="core\styles\main\mixins.less" />
-    <Content Include="core\styles\plugins\colorPickify.less" />
-    <Content Include="core\styles\plugins\treeify.less" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
+    <Folder Include="core\" />
+    <Folder Include="Properties\" />
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

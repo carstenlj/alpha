@@ -26,12 +26,12 @@
 .color-picker .picker-sb .overlay {
   width: 196px;
   height: 196px;
-  background-image: url('/img/bgGradient.png');
+  background-image: url('color-picker-gradient.png');
 }
 .color-picker .picker-sb .picker {
   width: 10px;
   height: 10px;
-  background-image: url('/img/color-picker-circle.png');
+  background-image: url('color-picker-circle.png');
   position: absolute;
   top: 0px;
   left: 0px;
@@ -47,7 +47,7 @@
 .color-picker .picker-h .huebar {
   height: 196px;
   border: 1px solid #999999;
-  background-image: url('/img/hueBar.png');
+  background-image: url('color-picker-huebar.png');
 }
 .color-picker .picker-h .picker {
   z-index: -10;
@@ -56,10 +56,10 @@
   top: -6px;
   width: 44px;
   height: 17px;
-  background-image: url('/img/color-picker-arrows.png');
+  background-image: url('color-picker-arrows.png');
 }
 .color-picker .icon-scroll {
-  background-image: url('/img/color-picker-adjust.png');
+  background-image: url('color-picker-adjust.png');
   background-repeat: no-repeat;
   background-position: 7px 3px;
 }
@@ -84,6 +84,7 @@
   margin-top: 32px;
 }
 .color-picker .right-panel input {
+  font-family: 'Consolas', 'Monospace', 'Courier New', Courier;
   display: inline-block;
   width: 42px;
   height: 13px;
