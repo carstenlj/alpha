@@ -165,6 +165,7 @@
 			// Set the new current color based on what input changed
 			switch (inputType) {
 				case 'hex':
+					// TODO
 					//setCurrentHsvFromRgb(clamp(0, 255, val), input.green.val(), input.blue.val());
 					break;
 				case 'red':
@@ -214,10 +215,13 @@
 			current.B = hsv[2] * 100;
 		}
 
+		// Updates the current hue value based on slider movement
 		function mouseMoveSliderH(e) {
 			current.H = clamp(0, 360, invert((e.pageY - sliderPosH.top) / size) * 360);
 			updateUI();
 		}
+
+		// Updates the saturation and brightness values based on slider movement
 		function mouseMoveSliderSB(e) {
 			current.S = clamp(0, 100, ((e.pageX - sliderPosSB.left + 1) / size) * 100);
 			current.B = clamp(0, 100, (invert((e.pageY - sliderPosSB.top - 1) / size) * 100));
@@ -227,7 +231,7 @@
 		// Updates all input to reflect current HSB value
 		function updateUI() {
 			// Places the pickers based on current HSB value
-			input.slider_h.css({ 'top': clamp(-sliderSizeH + 1, size - sliderSizeH, invert(current.H / 360) * size - sliderSizeH + 1) });
+			input.slider_h.css({ 'top': clamp(2, size + 2, invert(current.H / 360) * size + 1) });
 			input.slider_sb.css({
 				'top': clamp(-sliderRadiusSB, size - sliderRadiusSB, invert(current.B / 100) * size - sliderRadiusSB),
 				'left': clamp(-sliderRadiusSB, size - sliderRadiusSB, current.S / 100 * size - sliderRadiusSB)
@@ -257,7 +261,6 @@
 			else input['hex'].css('color', "#FFF");
 		}
 
-
 		/***** EVENTS *****/
 
 		// Mouse scroll event
@@ -283,10 +286,6 @@
 			setInput(inputType, val);
 		});
 
-		// Picker mousedown events
-		this.find('.picker-sb').mousedown(function (e) { currentInputType = 'slider_sb'; mouseMoveSliderSB(e); });
-		this.find('.picker-h').mousedown(function (e) { currentInputType = 'slider_h'; mouseMoveSliderH(e); });
-
 		// Generic mousedown event (activates picking, and ensures no text selection)
 		this.mousedown(function (e) {
 			// Ensure drag cursor and no text selection while dragging
@@ -294,21 +293,24 @@
 			clearSelection();
 			$('body')[0].onselectstart = function (e) { e.preventDefault(); return false; }
 			setUserSelect($('body'), '');
-
-			// Get input type and skip if undefined
+			
+			// Determine input type and behavior
 			var inputType = $(e.target).attr("data-input-color");
-			var isPickerSB = $(e.target).hasClass("overlay");
+			var isPickerSB = $(e.target).hasClass("overlay") || $(e.target).hasClass("picker-wrap");
 			var isPickerH = $(e.target).hasClass("huebar") || $(e.target).hasClass("picker-h");
 			var isDragable = $(e.target).hasClass("dragable")
 
+			// Set the appropiate active state based on the input type
+			currentInputType = '';
 			if (isPickerSB) {
 				currentInputType = "slider_sb";
+				mouseMoveSliderSB(e);
 			}
 			else if (isPickerH) {
 				currentInputType = "slider_h";
+				mouseMoveSliderH(e);
 				$('body').css('cursor', 'n-resize');
-			}
-			
+			}		
 			else if (isDragable) {
 				currentInputType = inputType;
 				$('body').css('cursor', 'n-resize');
@@ -321,7 +323,6 @@
 		})
 
 		// Mouse move event
-		var prevY = 0;
 		$(document).mousemove(function (e) {
 			if (isDragging) {
 				e.stopPropagation();

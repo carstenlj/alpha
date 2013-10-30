@@ -1,9 +1,6 @@
 ﻿/* MIXINS (SINGLE STYLE) */
-/* SIZES */
 /* FONT VARS */
 /* COLOR VARS */
-/* DERIVED COLOR VALUES */
-/* MIXINS (MULTI STYLE) */
 /* BASIC RESET */
 body,
 p,
@@ -24,7 +21,7 @@ h4 {
 /* BASE GENERIC STYLE */
 body {
   background-color: #f5f5f5;
-  color: #2f2f2f;
+  color: #222222;
   font-family: 'Segoe UI', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma;
   font-size: 12px;
   line-height: 20px;

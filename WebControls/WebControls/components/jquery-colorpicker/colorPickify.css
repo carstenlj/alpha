@@ -1,8 +1,8 @@
 ﻿.color-picker {
   display: inline-block;
   border: 1px solid rgba(0, 0, 0, 0.45);
-  padding: 16px;
-  height: 198px;
+  padding: 8px;
+  height: 212px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -15,20 +15,24 @@
 .color-picker .dragable {
   cursor: n-resize;
 }
-.color-picker .picker-sb {
+.color-picker .picker-wrap {
+  display: inline-block;
+  padding: 8px;
+  cursor: crosshair;
+  z-index: 1;
+}
+.color-picker .picker-wrap .picker-sb {
   width: 196px;
   height: 196px;
-  display: inline-block;
   position: relative;
-  cursor: crosshair;
   border: 1px solid #808080;
 }
-.color-picker .picker-sb .overlay {
+.color-picker .picker-wrap .picker-sb .overlay {
   width: 196px;
   height: 196px;
   background-image: url('color-picker-gradient.png');
 }
-.color-picker .picker-sb .picker {
+.color-picker .picker-wrap .picker-sb .picker {
   width: 10px;
   height: 10px;
   background-image: url('color-picker-circle.png');
@@ -40,7 +44,7 @@
 }
 .color-picker .picker-h {
   display: inline-block;
-  padding: 0px 20px;
+  padding: 8px 16px;
   position: relative;
   width: 24px;
 }
@@ -52,8 +56,7 @@
 .color-picker .picker-h .picker {
   z-index: -10;
   position: absolute;
-  left: 9px;
-  top: -6px;
+  left: 5px;
   width: 44px;
   height: 17px;
   background-image: url('color-picker-arrows.png');
@@ -64,6 +67,7 @@
   background-position: 7px 3px;
 }
 .color-picker .right-panel {
+  padding: 8px;
   display: inline-block;
   vertical-align: top;
   font-size: 12px;
@@ -98,9 +102,8 @@
 .color-picker .right-panel .group {
   vertical-align: middle;
   line-height: 0px;
-  background-color: #ededed;
+  background-color: #e5e5e5;
   margin-top: 14px;
-  border: 1px solid #a6a6a6;
 }
 .color-picker .right-panel .group span {
   padding: 0;

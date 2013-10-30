@@ -5,8 +5,8 @@
 
 	display: inline-block;
 	border: 1px solid fade(#000, 45);
-	padding: 16px;
-	height: 198px;
+	padding: 8px;
+	height: 212px;
 
 	-webkit-user-select: none;
 	   -moz-user-select: none;
@@ -23,35 +23,40 @@
 		cursor: n-resize;
 	}
 
-	.picker-sb {
-		width: @size;
-		height: @size;
+	.picker-wrap {
 		display: inline-block;
-		position: relative;
+		padding: 8px;
 		cursor: crosshair;
-		border: 1px solid lighten(#000, 50%);
-		
-		.overlay {
+		z-index: 1;
+
+		.picker-sb {
 			width: @size;
 			height: @size;
-			background-image: url('color-picker-gradient.png');
-		}
+			position: relative;
+			border: 1px solid lighten(#000, 50%);
+		
+			.overlay {
+				width: @size;
+				height: @size;
+				background-image: url('color-picker-gradient.png');
+			}
 
-		.picker {
-			width: @pickerSize;
-			height: @pickerSize;
-			background-image: url('color-picker-circle.png');
-			position: absolute;
-			top: 0px;
-			left: 0px;
-			display: none;
-			cursor: crosshair;
+			.picker {
+				width: @pickerSize;
+				height: @pickerSize;
+				background-image: url('color-picker-circle.png');
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				display: none;
+				cursor: crosshair;
+			}
 		}
 	}
 
 	.picker-h {
 		display: inline-block;
-		padding: 0px 20px;
+		padding: 8px 16px;
 		position: relative;
 		width: 24px;
 
@@ -64,8 +69,7 @@
 		.picker {
 			z-index: -10;
 			position: absolute;
-			left: 9px;
-			top: -6px;
+			left: 5px;
 			width: 44px;
 			height: 17px;
 			background-image: url('color-picker-arrows.png');
@@ -81,6 +85,7 @@
 	.right-panel {
 		@color-background: darken(#FFF, 7%);
 
+		padding: 8px;
 		display: inline-block;
 		vertical-align: top;
 		font-size: 12px;
@@ -118,9 +123,8 @@
 		.group{
 			vertical-align: middle;
 			line-height: 0px;
-			background-color: @color-background;
+			background-color: darken(@color-background, 3%);
 			margin-top: 14px;
-			border: 1px solid lighten(#000, 65%);
 
 			span {
 				padding: 0;
