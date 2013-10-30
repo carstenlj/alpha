@@ -38,71 +38,48 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="components\jquery-colorpicker\color-picker-gradient.png" />
     <Content Include="default.html" />
-    <Content Include="img\arrow_down_12x12.png" />
-    <Content Include="img\arrow_down_24x24.png" />
-    <Content Include="img\attention16.png" />
-    <Content Include="img\attention32.png" />
-    <Content Include="img\bgGradient.png" />
-    <Content Include="img\check_12x10.png" />
-    <Content Include="img\check_24x19.png" />
-    <Content Include="img\color-picker-adjust.png" />
-    <Content Include="img\color-picker-arrows.png" />
-    <Content Include="img\color-picker-circle.png" />
-    <Content Include="img\hueBar.png" />
-    <Content Include="img\info_12x24.png" />
-    <Content Include="img\info_16x32.png" />
-    <Content Include="img\info_8x16.png" />
-    <Content Include="img\list_12x11.png" />
-    <Content Include="img\list_24x21.png" />
-    <Content Include="img\wrench_12x12.png" />
-    <Content Include="img\wrench_24x24.png" />
-    <Content Include="img\x_11x11.png" />
-    <Content Include="img\x_21x21.png" />
-    <Content Include="img\x_blue21x21.png" />
-    <Content Include="js\jquery-1.10.2.min.js" />
-    <Content Include="js\jquery-colorpickify.js" />
-    <Content Include="js\main.js" />
-    <Content Include="styles\main\globals.css">
+    <Content Include="components\jquery-colorpicker\color-picker-adjust.png" />
+    <Content Include="components\jquery-colorpicker\color-picker-arrows.png" />
+    <Content Include="components\jquery-colorpicker\color-picker-circle.png" />
+    <Content Include="components\jquery-colorpicker\color-picker-huebar.png" />
+    <Content Include="master\js\jquery-1.10.2.min.js" />
+    <Content Include="components\jquery-colorpicker\jquery-colorpickify.js" />
+    <Content Include="master\js\main.js" />
+    <Content Include="master\style\globals.css">
       <DependentUpon>globals.less</DependentUpon>
     </Content>
-    <Content Include="styles\main\globals.min.css">
+    <Content Include="master\style\globals.min.css">
       <DependentUpon>globals.less</DependentUpon>
     </Content>
-    <Content Include="styles\main\input.css">
-      <DependentUpon>input.less</DependentUpon>
-    </Content>
-    <Content Include="styles\main\input.min.css">
-      <DependentUpon>input.less</DependentUpon>
-    </Content>
-    <Content Include="styles\main\main.css">
+    <Content Include="master\style\main.css">
       <DependentUpon>main.less</DependentUpon>
     </Content>
-    <Content Include="styles\main\main.min.css">
+    <Content Include="master\style\main.min.css">
       <DependentUpon>main.less</DependentUpon>
     </Content>
-    <Content Include="styles\main\mixins.css">
+    <Content Include="master\style\mixins.css">
       <DependentUpon>mixins.less</DependentUpon>
     </Content>
-    <Content Include="styles\main\mixins.min.css">
+    <Content Include="master\style\mixins.min.css">
       <DependentUpon>mixins.less</DependentUpon>
     </Content>
-    <Content Include="styles\plugins\colorPickify.css">
+    <Content Include="components\jquery-colorpicker\colorPickify.css">
       <DependentUpon>colorPickify.less</DependentUpon>
     </Content>
-    <Content Include="styles\plugins\colorPickify.min.css">
+    <Content Include="components\jquery-colorpicker\colorPickify.min.css">
       <DependentUpon>colorPickify.less</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="styles\main\globals.less" />
-    <Content Include="styles\main\input.less" />
-    <Content Include="styles\main\main.less" />
-    <Content Include="styles\main\mixins.less" />
-    <Content Include="styles\plugins\colorPickify.less" />
+    <Content Include="master\style\globals.less" />
+    <Content Include="master\style\main.less" />
+    <Content Include="master\style\mixins.less" />
+    <Content Include="components\jquery-colorpicker\colorPickify.less" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="core\" />
+    <Folder Include="master\img\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <PropertyGroup>
