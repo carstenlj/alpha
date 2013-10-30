@@ -1,0 +1,40 @@
+﻿@import 'mixins.less';
+
+/* SIZES */
+@input-line-height: 28px;
+
+/* FONT VARS */
+@font-text: 'Segoe UI', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma;
+@font-mono: 'Consolas', 'Monospace', 'Courier New', Courier;
+@font-header: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Helvetica Neue', 'Helvetica', Verdana, Tahoma;
+
+/* COLOR VARS */
+@color-light: #F5F5F5;
+@color-dark: #222222;
+@color-input: #FFFFED;
+@color-interact: #2784D6;
+@color-informative: #A44FA8;
+@color-negative: #E84141;
+@color-positive: #36D40B;
+@color-attention: #E89300;
+
+/* DERIVED COLOR VALUES */
+@color-background : @color-light;
+@color-background-dark : darken(@color-light, 5%);
+@color-border: darken(@color-light, 10%);
+@color-text : lighten(@color-dark, 5%);
+@color-text-dark : lighten(@color-dark, 5%);
+@color-text-fade : lighten(@color-dark, 50%);
+@color-input-hover:	lighten(@color-input, 1.5%);
+@color-input-border : hsl(hue(@color-input), saturation(@color-input), 41%);
+
+/* MIXINS (MULTI STYLE) */
+.border-input-focus() {
+	border-color: @color-input-border;
+	.box-shadow(0px 0px 4px fade(@color-input-border, 25%));
+	outline: none
+}
+
+.border-interact() {
+	border: 1px solid lighten(@color-interact, 25%);
+}
