@@ -38,14 +38,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="components\jquery-colorpicker\color-picker-gradient.png" />
+    <Content Include="components\jquery-colorpicker\colorpicker-gradient.png" />
+    <Content Include="components\jquery-colorpicker\colorpicker.css">
+      <DependentUpon>colorpicker.less</DependentUpon>
+    </Content>
+    <Content Include="components\jquery-colorpicker\colorpicker.min.css">
+      <DependentUpon>colorpicker.less</DependentUpon>
+    </Content>
     <Content Include="default.html" />
-    <Content Include="components\jquery-colorpicker\color-picker-adjust.png" />
-    <Content Include="components\jquery-colorpicker\color-picker-arrows.png" />
-    <Content Include="components\jquery-colorpicker\color-picker-circle.png" />
-    <Content Include="components\jquery-colorpicker\color-picker-huebar.png" />
+    <Content Include="components\jquery-colorpicker\colorpicker-adjust.png" />
+    <Content Include="components\jquery-colorpicker\colorpicker-arrows.png" />
+    <Content Include="components\jquery-colorpicker\colorpicker-circle.png" />
+    <Content Include="components\jquery-colorpicker\colorpicker-huebar.png" />
     <Content Include="master\js\jquery-1.10.2.min.js" />
-    <Content Include="components\jquery-colorpicker\jquery-colorpickify.js" />
+    <Content Include="components\jquery-colorpicker\jquery-colorpicker.js" />
     <Content Include="master\js\main.js" />
     <Content Include="master\style\globals.css">
       <DependentUpon>globals.less</DependentUpon>
@@ -65,18 +71,12 @@
     <Content Include="master\style\mixins.min.css">
       <DependentUpon>mixins.less</DependentUpon>
     </Content>
-    <Content Include="components\jquery-colorpicker\colorPickify.css">
-      <DependentUpon>colorPickify.less</DependentUpon>
-    </Content>
-    <Content Include="components\jquery-colorpicker\colorPickify.min.css">
-      <DependentUpon>colorPickify.less</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="master\style\globals.less" />
     <Content Include="master\style\main.less" />
     <Content Include="master\style\mixins.less" />
-    <Content Include="components\jquery-colorpicker\colorPickify.less" />
+    <Content Include="components\jquery-colorpicker\colorpicker.less" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="master\img\" />

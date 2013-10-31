@@ -1,4 +1,4 @@
-﻿(function colorPickify($) {
+﻿(function colorPicker($) {
 	/***** PLUGIN GLOBAL FUNCTIONS *****/
 
 	// Converts an RGB color value to HSV.
@@ -130,7 +130,7 @@
 		setUserSelect($('body'), '');
 	})
 
-	$.fn.colorPickify = function () {
+	$.fn.colorPicker = function () {
 		/***** INTERNAL VARS ****/
 		var size = 196;
 		var sliderPosSB = this.find('.picker-sb').position();
