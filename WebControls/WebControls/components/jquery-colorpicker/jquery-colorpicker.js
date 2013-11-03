@@ -281,7 +281,7 @@
 		var mousewheelevt = (/Firefox/i.test(navigator.userAgent)) ? "DOMMouseScroll" : "mousewheel"
 		this.on(mousewheelevt, function (e) {
 			e.preventDefault();
-			var inputType = $(e.target).attr("data-input-color");
+			var inputType = $(e.target).attr("data-type");
 			if (!inputType || inputType == 'hex') return;
 
 			var delta = e.originalEvent.wheelDelta || -1 * e.originalEvent.detail;
@@ -294,7 +294,7 @@
 		// Text changed event
 		this.find("input, .dragable").on('input', function (e) {
 			// Get input type and skip if undefined
-			var inputType = $(e.target).attr("data-input-color");
+			var inputType = $(e.target).attr("data-type");
 			if (!isDefined(inputType) || inputType == 'hex') return;
 
 			var val = getValue(inputType);
@@ -318,7 +318,7 @@
 			setUserSelect($('body'), '');
 			
 			// Determine input type and behavior
-			var inputType = $(e.target).attr("data-input-color");
+			var inputType = $(e.target).attr("data-type");
 			var isPickerSB = $(e.target).hasClass("overlay") || $(e.target).hasClass("picker-wrap") || $(e.target).hasClass("picker");
 			var isPickerH = $(e.target).hasClass("huebar") || $(e.target).hasClass("picker-h");
 			var isDragable = $(e.target).hasClass("dragable")
