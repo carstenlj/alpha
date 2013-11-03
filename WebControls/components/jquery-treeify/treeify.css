@@ -1,0 +1,40 @@
+﻿.treeify {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 0;
+  margin: 0;
+}
+.treeify ul {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+.treeify ul:not(:first-child) > li {
+  margin-left: 16px;
+}
+.treeify li {
+  line-height: 21px;
+  font-size: 12px;
+  list-style: none;
+}
+.treeify li .icon,
+.treeify li .title {
+  vertical-align: middle;
+  cursor: pointer;
+}
+.treeify li .title {
+  margin-left: 3px;
+}
+.treeify .icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+.treeify .icon.expander {
+  background-image: url(treeify-expander.png);
+}
+.treeify .icon.folder {
+  background-image: url(treeify-folder.png);
+}

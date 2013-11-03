@@ -11,12 +11,67 @@
 	<!-- COLOR PICKER STYLE AND SCRIPT -->
 	<link rel="stylesheet" type="text/css" href="components/jquery-colorpicker/colorpicker.min.css" />
 	<script src="components/jquery-colorpicker/jquery-colorpicker.js"></script>
+
+	<!-- TREEIFY STYLE AND SCRIPT -->
+	<link rel="stylesheet" type="text/css" href="components/jquery-treeify/treeify.min.css" />
+	<script src="components/jquery-treeify/jquery-treeify.js"></script>
+	<script type="text/javascript">
+		var testTree = [
+			{
+				id: 0,
+				title: 'Node A',
+				type: 0,
+				children: [
+					{
+						id: 3,
+						title: 'Item A.1',
+						type: 1,
+						children: [
+							{
+								id: 6,
+								title: 'Item A.1a',
+								type: 1,
+								children: [
+								{
+									id: 7,
+									title: 'Item A.1a.1',
+									type: 1
+								}]
+							}
+						]
+					},
+					{
+						id: 4,
+						title: 'Item A.2',
+						type: 1
+					},
+					{
+						id: 5,
+						title: 'Item A.3',
+						type: 1
+					},
+				]
+			},
+			{
+				id: 1,
+				title: 'Node B',
+				type: 0,
+			},
+			{
+				id: 2,
+				title: 'Node C',
+				type: 0,
+			}
+		];
+	</script>
+
 </head>
 <body>
 	<script>
 		// Initialization
 		$(function () {
 			$('.color-picker').colorPicker();
+			$(".treeify").treeify('add', testTree);
 		});
 	</script>
 
@@ -37,7 +92,7 @@
 				<div class="current">
 					<input class="input-hex" data-type="hex"/>
 				</div>
-				<div class="group">
+				<div class="group" title="Drag handle or scroll with mouse to adjust values">
 					<span>R</span><input class="input-red" data-type="red"/><span data-type="red" class="icon-scroll dragable"></span><br />
 					<span>G</span><input class="input-green" data-type="green"/><span data-type="green" class="icon-scroll dragable"></span><br />
 					<span>B</span><input class="input-blue" data-type="blue"/><span data-type="blue" class="icon-scroll dragable"></span><br />
@@ -50,6 +105,12 @@
 			</div>
 		</div>
 		<!-- END COLOR PICKER MARKUP -->
+
+		<br /><br />
+
+		<!-- TREE MARKUP -->
+		<ul class="treeify"></ul>
+		<!-- END TREE MARKUP -->
 	</div>
 </body>
 </html>

@@ -323,7 +323,7 @@
 			var isPickerH = $(e.target).hasClass("huebar") || $(e.target).hasClass("picker-h");
 			var isDragable = $(e.target).hasClass("dragable")
 
-			// Select the hexi nput when clicked
+			// Select the hex nput when clicked
 			if (inputType == 'hex' || $(e.target).hasClass("current")) {
 				input.hex.select();
 				e.preventDefault();

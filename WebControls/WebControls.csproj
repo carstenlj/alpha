@@ -45,6 +45,16 @@
     <Content Include="components\jquery-colorpicker\colorpicker.min.css">
       <DependentUpon>colorpicker.less</DependentUpon>
     </Content>
+    <Content Include="components\jquery-treeify\treeify-expander.png" />
+    <Content Include="components\jquery-treeify\treeify-folder.png" />
+    <Content Include="components\jquery-treeify\jquery-treeify.js" />
+    <Content Include="components\jquery-treeify\treeify-loader.GIF" />
+    <Content Include="components\jquery-treeify\treeify.css">
+      <DependentUpon>treeify.less</DependentUpon>
+    </Content>
+    <Content Include="components\jquery-treeify\treeify.min.css">
+      <DependentUpon>treeify.less</DependentUpon>
+    </Content>
     <Content Include="default.html" />
     <Content Include="components\jquery-colorpicker\colorpicker-adjust.png" />
     <Content Include="components\jquery-colorpicker\colorpicker-arrows.png" />
@@ -81,6 +91,9 @@
   <ItemGroup>
     <Folder Include="master\img\" />
     <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="components\jquery-treeify\treeify.less" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
