@@ -133,13 +133,8 @@
 	$.fn.colorPicker = function () {
 		/***** INTERNAL VARS ****/
 		var size = 196;
-		var sliderPosSB = this.find('.picker-sb').position();
-		var sliderRadiusSB = 10 / 2.0;;
-		var sliderPosH = this.find('.picker-h').position();
-		var sliderSizeH = 8.5;
 		var currentInputType = '';
 		var current = { H: 0, S: 100, B: 100 };
-		var isHexDark = false;
 		var input = {
 			hex: this.find(".input-hex"),
 			red: this.find(".input-red"),
@@ -165,8 +160,7 @@
 			// Set the new current color based on what input changed
 			switch (inputType) {
 				case 'hex':
-					// TODO
-					//setCurrentHsvFromRgb(clamp(0, 255, val), input.green.val(), input.blue.val());
+					setCurrentHsvFromRgb(val[0], val[1], val[2]);
 					break;
 				case 'red':
 					setCurrentHsvFromRgb(clamp(0, 255, val), input.green.val(), input.blue.val());
@@ -197,12 +191,27 @@
 		function getValue(inputType) {
 			var val = input[inputType].val();
 
-			// Normalize val as decimal integer, if not of hex type
+			// Perform special normalization for hex value type
 			if (inputType == 'hex') {
-				if (val[0] === '#') return val.substring(1, 7);
-				return val.substring(0, 6);
+				if (val[0] === '#')
+					val = val.substring(1, 7);
+
+				// Normalize each byte value
+				var hexits = [val.substring(0, 2), val.substring(2, 4), val.substring(4, 6)];
+				for (var i = 0; i < hexits.length; i++) {		
+					// Get base integer value from hexit
+					hexits[i] = parseInt(hexits[i], 16);
+					if (!hexits[i]) {
+						// If hexit doesn't represent a base 16 number, determine wheter to substitute for 255 or 0
+						if (parseInt(hexits[i], 36)) hexits[i] = 255;
+						else hexits[i] = 0;
+					}
+				}
+
+				return hexits;
 			}
 
+			// Regular integer values are normalized
 			val = parseInt(val, 10);
 			return isNaN(val) ? 0 : val;
 		}
@@ -217,18 +226,22 @@
 
 		// Updates the current hue value based on slider movement
 		function mouseMoveSliderH(e) {
-			current.H = clamp(0, 360, invert((e.pageY - sliderPosH.top) / size) * 360);
+			var sliderPosH = $('.color-picker .picker-h').position();
+			current.H = clamp(0, 360, invert((e.pageY - sliderPosH.top - 8.5) / size) * 360);
 			updateUI();
 		}
 
-		// Updates the saturation and brightness values based on slider movement
+		// Updates the saturation and brightness values based on slider movement	
 		function mouseMoveSliderSB(e) {
+			var sliderPosSB = $('.color-picker .picker-sb').position();
 			current.S = clamp(0, 100, ((e.pageX - sliderPosSB.left + 1) / size) * 100);
 			current.B = clamp(0, 100, (invert((e.pageY - sliderPosSB.top - 1) / size) * 100));
 			updateUI();
 		}
 
 		// Updates all input to reflect current HSB value
+		var sliderSizeH = 8.5;
+		var sliderRadiusSB = 10 / 2.0;
 		function updateUI() {
 			// Places the pickers based on current HSB value
 			input.slider_h.css({ 'top': clamp(2, size + 2, invert(current.H / 360) * size + 1) });
@@ -257,6 +270,7 @@
 			input.saturation.val(Math.round(current.S));
 			input.brightness.val(Math.round(current.B));
 
+			// Updates the color of the hex value to contrast with background
 			if (current.B > 75) input['hex'].css('color', "#000");
 			else input['hex'].css('color', "#FFF");
 		}
@@ -268,37 +282,52 @@
 		this.on(mousewheelevt, function (e) {
 			e.preventDefault();
 			var inputType = $(e.target).attr("data-input-color");
-			if (!inputType) return;
+			if (!inputType || inputType == 'hex') return;
 
 			var delta = e.originalEvent.wheelDelta || -1 * e.originalEvent.detail;
 			var adjust = delta > 0 ? 1 : -1;
 			var val = getValue(inputType) + adjust;
 			setInput(inputType, val);
+			input[inputType].focus();
 		});
 
 		// Text changed event
 		this.find("input, .dragable").on('input', function (e) {
 			// Get input type and skip if undefined
 			var inputType = $(e.target).attr("data-input-color");
-			if (!isDefined(inputType)) return;
+			if (!isDefined(inputType) || inputType == 'hex') return;
 
 			var val = getValue(inputType);
 			setInput(inputType, val);
 		});
+
+		// Blur event for hex input
+		this.find(".input-hex").on('blur keydown', function (e) {
+			if (e.type == 'keydown' && e.keyCode != 13)
+				return;
+
+			setInput('hex', getValue('hex'));
+		})
 
 		// Generic mousedown event (activates picking, and ensures no text selection)
 		this.mousedown(function (e) {
 			// Ensure drag cursor and no text selection while dragging
 			isDragging = true;
 			clearSelection();
-			$('body')[0].onselectstart = function (e) { e.preventDefault(); return false; }
+			//$('body')[0].onselectstart = function (e) { e.preventDefault(); return false; }
 			setUserSelect($('body'), '');
 			
 			// Determine input type and behavior
 			var inputType = $(e.target).attr("data-input-color");
-			var isPickerSB = $(e.target).hasClass("overlay") || $(e.target).hasClass("picker-wrap");
+			var isPickerSB = $(e.target).hasClass("overlay") || $(e.target).hasClass("picker-wrap") || $(e.target).hasClass("picker");
 			var isPickerH = $(e.target).hasClass("huebar") || $(e.target).hasClass("picker-h");
 			var isDragable = $(e.target).hasClass("dragable")
+
+			// Select the hexi nput when clicked
+			if (inputType == 'hex' || $(e.target).hasClass("current")) {
+				input.hex.select();
+				e.preventDefault();
+			}
 
 			// Set the appropiate active state based on the input type
 			currentInputType = '';
@@ -329,9 +358,11 @@
 				switch (currentInputType) {
 					case 'slider_sb':
 						mouseMoveSliderSB(e);
+						clearSelection();
 						break;
 					case 'slider_h':
 						mouseMoveSliderH(e);
+						clearSelection();
 						break;
 					default:
 						if (currentInputType !== '') {
@@ -341,6 +372,7 @@
 
 							var val = getValue(currentInputType) + adjust;
 							setInput(currentInputType, val);
+							input[currentInputType].focus();
 						}
 						break;
 				}
