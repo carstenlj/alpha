@@ -1,0 +1,1 @@
+$('#mainForm #mainwrapper #header').css('background-color', '#F00');

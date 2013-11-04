@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+
+  "name": "iPaper CMS Dev",
+  "description": "Does stuff",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": ["*://*.ipapercms.dk/*"],
+      "js": ["jquery.js", "ext.js"]
+    }
+  ],
+  "icons": { 
+        "48": "ipicon.png"
+	}
+}
