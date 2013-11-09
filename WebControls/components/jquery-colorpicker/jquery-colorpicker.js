@@ -364,9 +364,11 @@
 				e.stopPropagation();
 				switch (currentInputType) {
 					case 'slider_sb':
+						clearSelection();
 						mouseMoveSliderSB(e);
 						break;
 					case 'slider_h':
+						clearSelection();
 						mouseMoveSliderH(e);
 						break;
 					default:
@@ -379,9 +381,7 @@
 						}
 						break;
 				}
-				clearSelection();
 			}
-
 			prevY = e.pageY;
 		});
 

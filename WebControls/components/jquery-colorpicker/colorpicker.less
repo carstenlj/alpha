@@ -1,4 +1,10 @@
-﻿.color-picker {
+﻿.box-shadow(@string) {
+	-webkit-box-shadow: @string;
+	   -moz-box-shadow: @string;
+			box-shadow: @string;
+}
+
+.color-picker {
 	@size : 196px;
 	@pickerSize : 10px;
 	@font: Consolas, 'Lucida Console', 'DejaVu Sans Mono', monospace;
@@ -15,9 +21,7 @@
 			user-select: none;
 
 	@color-box-shaow:  fade(#000, 40);
-	 -webkit-box-shadow: 0px 0px 12px @color-box-shaow;
-		-moz-box-shadow: 0px 0px 12px @color-box-shaow;
-			 box-shadow: 0px 0px 12px @color-box-shaow;
+	.box-shadow(0px 0px 12px @color-box-shaow);
 	
 	.dragable {
 		cursor: n-resize;
@@ -95,6 +99,7 @@
 		.current {
 			height: 56px;
 			width: 96px;
+			.box-shadow(0px 0px 16px lighten(@color-box-shaow, 70%));
 
 			.input-hex {
 				padding: 0;
@@ -115,8 +120,8 @@
 			padding-top: 1px;
 
 			span {
-				width: 36px;
-				padding: 0 0 0 16px;
+				width: 33px;
+				padding: 0 0 0 14px;
 				line-height: 18px;
 				height: 18px;
 				display: inline-block;
@@ -126,15 +131,14 @@
 				&.icon-scroll {
 					background-image: url('colorpicker-adjust.png');
 					background-repeat: no-repeat;
-					background-position: 24px 6px;
+					background-position: 23px 6px;
 				}
 			}
 
 			input{
 				display: inline-block;
-				width: 41px;
+				width: 46px;
 				height: 19px;
-				//line-height: 14px;
 				box-shadow: none;
 				padding: 0 0 0 2px;
 				cursor: text;
