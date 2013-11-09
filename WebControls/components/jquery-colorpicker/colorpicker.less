@@ -76,12 +76,6 @@
 		}
 	}
 
-	.icon-scroll {
-		background-image: url('colorpicker-adjust.png');
-		background-repeat: no-repeat;
-		background-position: 7px 3px;
-	}
-
 	.right-panel {
 		@color-background: darken(#FFF, 7%);
 
@@ -91,8 +85,15 @@
 		font-size: 12px;
 		font-family: @font;
 
+		input {
+			font-family: @font;
+			border: none;
+			margin: 0;
+			outline: none;
+		}
+
 		.current {
-			height: 58px;
+			height: 56px;
 			width: 96px;
 
 			.input-hex {
@@ -107,33 +108,36 @@
 			}
 		}
 	
-		input{
-			font-family: 'Consolas', 'Monospace', 'Courier New', Courier;
-			display: inline-block;
-			width: 42px;
-			height: 14px;
-			box-shadow: none;
-			padding: 2px;
-			border:none;
-			outline: none;
-			cursor: text;
-		}
-
 		.group{
 			vertical-align: middle;
-			line-height: 0px;
 			background-color: darken(@color-background, 3%);
-			margin-top: 14px;
+			margin-top: 10px;
+			padding-top: 1px;
 
 			span {
-				padding: 0;
+				width: 36px;
+				padding: 0 0 0 16px;
+				line-height: 18px;
+				height: 18px;
 				display: inline-block;
-				width: 24px;
-				line-height: 14px;
-				height: 14px;
-				text-align:center;
 				vertical-align: middle;
 				font-family: @font;
+
+				&.icon-scroll {
+					background-image: url('colorpicker-adjust.png');
+					background-repeat: no-repeat;
+					background-position: 24px 6px;
+				}
+			}
+
+			input{
+				display: inline-block;
+				width: 41px;
+				height: 19px;
+				//line-height: 14px;
+				box-shadow: none;
+				padding: 0 0 0 2px;
+				cursor: text;
 			}
 		}
 		.group:last-of-type{

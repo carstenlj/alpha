@@ -134,7 +134,7 @@
 		/***** INTERNAL VARS ****/
 		var size = 196;
 		var currentInputType = '';
-		var current = { H: 0, S: 100, B: 100 };
+		var current = { H: 360, S: 100, B: 100 };
 		var input = {
 			hex: this.find(".input-hex"),
 			red: this.find(".input-red"),
@@ -321,7 +321,7 @@
 			isDragging = true;
 			clearSelection();
 			setUserSelect($('body'), '');
-			if(!/MSIE/i.test(navigator.userAgent))
+			if(!(/MSIE/i.test(navigator.userAgent)))
 				$('body')[0].onselectstart = function (e) { e.preventDefault(); return false; }		
 				
 			// Determine input type and behavior
@@ -330,7 +330,7 @@
 			var isPickerH = $(e.target).hasClass("huebar") || $(e.target).hasClass("picker-h");
 			var isDragable = $(e.target).hasClass("dragable")
 
-			// Select the hex nput when clicked
+			// Select the hex input when clicked
 			if (inputType == 'hex' || $(e.target).hasClass("current")) {
 				input.hex.select();
 				e.preventDefault();
@@ -365,24 +365,21 @@
 				switch (currentInputType) {
 					case 'slider_sb':
 						mouseMoveSliderSB(e);
-						clearSelection();
 						break;
 					case 'slider_h':
 						mouseMoveSliderH(e);
-						clearSelection();
 						break;
 					default:
-						if (currentInputType !== '') {
+						if (currentInputType !== '') {				
 							var adjust = clamp(-1, 1, prevY - e.pageY)
-							if (adjust == 0)
-								return;
+							if (adjust == 0) return;
 
 							var val = getValue(currentInputType) + adjust;
 							setInput(currentInputType, val);
-							input[currentInputType].focus();
 						}
 						break;
 				}
+				clearSelection();
 			}
 
 			prevY = e.pageY;

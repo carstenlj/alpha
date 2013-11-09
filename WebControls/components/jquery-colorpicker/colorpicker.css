@@ -61,11 +61,6 @@
   height: 17px;
   background-image: url('colorpicker-arrows.png');
 }
-.color-picker .icon-scroll {
-  background-image: url('colorpicker-adjust.png');
-  background-repeat: no-repeat;
-  background-position: 7px 3px;
-}
 .color-picker .right-panel {
   padding: 8px;
   display: inline-block;
@@ -73,8 +68,14 @@
   font-size: 12px;
   font-family: Consolas, 'Lucida Console', 'DejaVu Sans Mono', monospace;
 }
+.color-picker .right-panel input {
+  font-family: Consolas, 'Lucida Console', 'DejaVu Sans Mono', monospace;
+  border: none;
+  margin: 0;
+  outline: none;
+}
 .color-picker .right-panel .current {
-  height: 58px;
+  height: 56px;
   width: 96px;
 }
 .color-picker .right-panel .current .input-hex {
@@ -87,32 +88,33 @@
   height: 24px;
   margin-top: 32px;
 }
-.color-picker .right-panel input {
-  font-family: 'Consolas', 'Monospace', 'Courier New', Courier;
-  display: inline-block;
-  width: 42px;
-  height: 14px;
-  box-shadow: none;
-  padding: 2px;
-  border: none;
-  outline: none;
-  cursor: text;
-}
 .color-picker .right-panel .group {
   vertical-align: middle;
-  line-height: 0px;
   background-color: #e5e5e5;
-  margin-top: 14px;
+  margin-top: 10px;
+  padding-top: 1px;
 }
 .color-picker .right-panel .group span {
-  padding: 0;
+  width: 36px;
+  padding: 0 0 0 16px;
+  line-height: 18px;
+  height: 18px;
   display: inline-block;
-  width: 24px;
-  line-height: 14px;
-  height: 14px;
-  text-align: center;
   vertical-align: middle;
   font-family: Consolas, 'Lucida Console', 'DejaVu Sans Mono', monospace;
+}
+.color-picker .right-panel .group span.icon-scroll {
+  background-image: url('colorpicker-adjust.png');
+  background-repeat: no-repeat;
+  background-position: 24px 6px;
+}
+.color-picker .right-panel .group input {
+  display: inline-block;
+  width: 41px;
+  height: 19px;
+  box-shadow: none;
+  padding: 0 0 0 2px;
+  cursor: text;
 }
 .color-picker .right-panel .group:last-of-type {
   margin-bottom: 0;

@@ -2,7 +2,7 @@
 <!-- saved from url=(0014)about:internet -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+	<title></title>
 	<!-- MASTER STYLE AND SCRIPT -->
 	<link rel="stylesheet" type="text/css" href="master/style/main.min.css" />
 	<script src="master/js/jquery-1.10.2.min.js"></script>
@@ -67,7 +67,7 @@
 
 </head>
 <body>
-	<script>
+	<script type="text/javascript">
 		// Initialization
 		$(function () {
 			$('.color-picker').colorPicker();
@@ -90,23 +90,24 @@
 			</div>
 			<div class="right-panel">
 				<div class="current">
-					<input class="input-hex" data-type="hex"/>
+					<input class="input-hex" data-type="hex" />
 				</div>
 				<div class="group" title="Drag handle or scroll with mouse to adjust values">
-					<span>R</span><input class="input-red" data-type="red"/><span data-type="red" class="icon-scroll dragable"></span><br />
-					<span>G</span><input class="input-green" data-type="green"/><span data-type="green" class="icon-scroll dragable"></span><br />
-					<span>B</span><input class="input-blue" data-type="blue"/><span data-type="blue" class="icon-scroll dragable"></span><br />
+					<span class="icon-scroll dragable" data-type="red">R</span><input class="input-red" data-type="red"/><br />
+					<span class="icon-scroll dragable" data-type="green">G</span><input class="input-green" data-type="green" /><br />
+					<span class="icon-scroll dragable" data-type="blue">B</span><input class="input-blue" data-type="blue" />
 				</div>
 				<div class="group" title="Drag handle or scroll with mouse to adjust values">
-					<span>H</span><input class="input-hue" data-type="hue"/><span data-type="hue" class="icon-scroll dragable"></span><br />
-					<span>S</span><input class="input-saturation" data-type="saturation"/><span data-type="saturation" class="icon-scroll dragable"></span><br />
-					<span>B</span><input class="input-brightness" data-type="brightness"/><span data-type="brightness" class="icon-scroll dragable"></span>
+					<span class="icon-scroll dragable" data-type="hue">H</span><input class="input-hue" data-type="hue" /><br />
+					<span class="icon-scroll dragable" data-type="saturation">S</span><input class="input-saturation" data-type="saturation" /><br />
+					<span class="icon-scroll dragable" data-type="brightness">B</span><input class="input-brightness" data-type="brightness" />
 				</div>
 			</div>
 		</div>
 		<!-- END COLOR PICKER MARKUP -->
 
-		<br /><br />
+		<br />
+		<br />
 
 		<!-- TREE MARKUP -->
 		<ul class="treeify"></ul>
