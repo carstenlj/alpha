@@ -151,7 +151,6 @@
 			background : this.find('.picker-sb')
 		}
 
-
 		/***** INTERNAL FUNCTIONS *****/
 
 		// Sets a color value for a specific input type
@@ -196,19 +195,26 @@
 				if (val[0] === '#')
 					val = val.substring(1, 7);
 
-				// Normalize each byte value
-				var hexits = [val.substring(0, 2), val.substring(2, 4), val.substring(4, 6)];
-				for (var i = 0; i < hexits.length; i++) {		
-					// Get base integer value from hexit
-					hexits[i] = parseInt(hexits[i], 16);
-					if (!hexits[i]) {
-						// If hexit doesn't represent a base 16 number, determine wheter to substitute for 255 or 0
-						if (parseInt(hexits[i], 36)) hexits[i] = 255;
-						else hexits[i] = 0;
-					}
+				// Normalize each 4-bit value
+				var hexits = [val[0] || 0, val[1] || 0, val[2] || 0, val[3] || 0, val[4] || 0, val[5] || 0];				
+
+				// Determine if hex string is of 16-bit format and convert
+				if (isDefined(val[2]) && !isDefined(val[3])) {
+					hexits = [val[0], val[0], val[1], val[1], val[2], val[2]];
 				}
 
-				return hexits;
+				// Parse hexit values
+				for (var i = 0; i < hexits.length; i++) {
+					var parsed = parseInt(hexits[i], 16);
+					hexits[i] = isNaN(parsed) ? 15 : parsed;
+				}
+
+				// Convert from six 4-bit values to three byte values and return
+				return [
+					(hexits[0] << 4) + hexits[1],
+					(hexits[2] << 4) + hexits[3],
+					(hexits[4] << 4) + hexits[5]
+				];
 			}
 
 			// Regular integer values are normalized
@@ -315,7 +321,8 @@
 			isDragging = true;
 			clearSelection();
 			setUserSelect($('body'), '');
-			$('body')[0].onselectstart = function (e) { e.preventDefault(); return false; }		
+			if(!/MSIE/i.test(navigator.userAgent))
+				$('body')[0].onselectstart = function (e) { e.preventDefault(); return false; }		
 				
 			// Determine input type and behavior
 			var inputType = $(e.target).attr("data-type");
