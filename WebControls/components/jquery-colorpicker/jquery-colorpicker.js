@@ -125,7 +125,7 @@
 	var isDragging = false;
 	$(document).mouseup(function () {
 		isDragging = false;
-		$('body')[0].onselectstart = function (e) { return true; }
+		$('body')[0].onselectstart = null;
 		$('body').css('cursor', '');
 		setUserSelect($('body'), '');
 	})
@@ -314,9 +314,9 @@
 			// Ensure drag cursor and no text selection while dragging
 			isDragging = true;
 			clearSelection();
-			//$('body')[0].onselectstart = function (e) { e.preventDefault(); return false; }
 			setUserSelect($('body'), '');
-			
+			$('body')[0].onselectstart = function (e) { e.preventDefault(); return false; }		
+				
 			// Determine input type and behavior
 			var inputType = $(e.target).attr("data-type");
 			var isPickerSB = $(e.target).hasClass("overlay") || $(e.target).hasClass("picker-wrap") || $(e.target).hasClass("picker");
