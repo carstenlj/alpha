@@ -33,8 +33,8 @@
   height: 16px;
 }
 .treeify .icon.expander {
-  background-image: url(treeify-expander.png);
+  background-image: url(img/treeify-expander.png);
 }
 .treeify .icon.folder {
-  background-image: url(treeify-folder.png);
+  background-image: url(img/treeify-folder.png);
 }

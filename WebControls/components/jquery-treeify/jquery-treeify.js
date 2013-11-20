@@ -133,7 +133,7 @@
 	}
 
 	// jQuery plugin
-	$.fn.treeify = function (command, data, noanim) {
+	$.fn.treeify = function (command, data, params) {
 		// Get proper root node (both ul and li element are allowed as the jquery element)
 		var root = getRootNode(this);
 
@@ -145,8 +145,8 @@
 		// Invoke specific function based on command parameter
 		switch (command) {
 			case 'add':
-				if (typeof (data) === 'string') addChildNodes(root, data, noanim)
-				else $.each(data, function () { addChildNodes(root, this, noanim) });
+				if (typeof (data) === 'string') addChildNodes(root, data, params)
+				else $.each(data, function () { addChildNodes(root, this, params) });
 				break;
 
 			case 'remove':

@@ -30,12 +30,12 @@
 .color-picker .picker-wrap .picker-sb .overlay {
   width: 196px;
   height: 196px;
-  background-image: url('colorpicker-gradient.png');
+  background-image: url('img/colorpicker-gradient.png');
 }
 .color-picker .picker-wrap .picker-sb .picker {
   width: 10px;
   height: 10px;
-  background-image: url('colorpicker-circle.png');
+  background-image: url('img/colorpicker-circle.png');
   position: absolute;
   top: 0px;
   left: 0px;
@@ -51,7 +51,7 @@
 .color-picker .picker-h .huebar {
   height: 196px;
   border: 1px solid #999999;
-  background-image: url('colorpicker-huebar.png');
+  background-image: url('img/colorpicker-huebar.png');
 }
 .color-picker .picker-h .picker {
   z-index: -10;
@@ -59,7 +59,7 @@
   left: 5px;
   width: 44px;
   height: 17px;
-  background-image: url('colorpicker-arrows.png');
+  background-image: url('img/colorpicker-arrows.png');
 }
 .color-picker .right-panel {
   padding: 8px;
@@ -107,7 +107,7 @@
   font-family: Consolas, 'Lucida Console', 'DejaVu Sans Mono', monospace;
 }
 .color-picker .right-panel .group span.icon-scroll {
-  background-image: url('colorpicker-adjust.png');
+  background-image: url('img/colorpicker-adjust.png');
   background-repeat: no-repeat;
   background-position: 23px 6px;
 }
