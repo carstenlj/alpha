@@ -38,17 +38,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="components\jquery-colorpicker\colorpicker-gradient.png" />
+    <Content Include="components\jquery-colorpicker\img\colorpicker-gradient.png" />
     <Content Include="components\jquery-colorpicker\colorpicker.css">
       <DependentUpon>colorpicker.less</DependentUpon>
     </Content>
     <Content Include="components\jquery-colorpicker\colorpicker.min.css">
       <DependentUpon>colorpicker.less</DependentUpon>
     </Content>
-    <Content Include="components\jquery-treeify\treeify-expander.png" />
-    <Content Include="components\jquery-treeify\treeify-folder.png" />
+    <Content Include="components\jquery-treeify\img\treeify-expander.png" />
+    <Content Include="components\jquery-treeify\img\treeify-folder.png" />
     <Content Include="components\jquery-treeify\jquery-treeify.js" />
-    <Content Include="components\jquery-treeify\treeify-loader.GIF" />
+    <Content Include="components\jquery-treeify\img\treeify-loader.GIF" />
     <Content Include="components\jquery-treeify\treeify.css">
       <DependentUpon>treeify.less</DependentUpon>
     </Content>
@@ -56,10 +56,10 @@
       <DependentUpon>treeify.less</DependentUpon>
     </Content>
     <Content Include="default.html" />
-    <Content Include="components\jquery-colorpicker\colorpicker-adjust.png" />
-    <Content Include="components\jquery-colorpicker\colorpicker-arrows.png" />
-    <Content Include="components\jquery-colorpicker\colorpicker-circle.png" />
-    <Content Include="components\jquery-colorpicker\colorpicker-huebar.png" />
+    <Content Include="components\jquery-colorpicker\img\colorpicker-adjust.png" />
+    <Content Include="components\jquery-colorpicker\img\colorpicker-arrows.png" />
+    <Content Include="components\jquery-colorpicker\img\colorpicker-circle.png" />
+    <Content Include="components\jquery-colorpicker\img\colorpicker-huebar.png" />
     <Content Include="master\js\jquery-1.10.2.min.js" />
     <Content Include="components\jquery-colorpicker\jquery-colorpicker.js" />
     <Content Include="master\js\main.js" />

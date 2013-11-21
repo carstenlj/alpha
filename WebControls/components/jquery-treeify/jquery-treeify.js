@@ -161,7 +161,7 @@
 				collapseNode(root, id);
 				break;
 
-			//TODO hide + show
+			//TODO hide + show + spinner
 
 			default: throw "treeify: Unknown command '" + command + "'";
 		}

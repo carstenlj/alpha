@@ -16,6 +16,13 @@
 	<link rel="stylesheet" type="text/css" href="components/jquery-treeify/treeify.min.css" />
 	<script src="components/jquery-treeify/jquery-treeify.js"></script>
 	<script type="text/javascript">
+		var treeNodeFormat = {
+			id: 0,				// ID of the node
+			title: '',			// Display label in the tree
+			type: '',			// The data-type attribute field used to distinguish between diffrent node types
+			children: []		// An array of treeNode objects representing the children
+		};
+
 		var testTree = [
 			{
 				id: 0,
@@ -71,7 +78,7 @@
 		// Initialization
 		$(function () {
 			$('.color-picker').colorPicker();
-			$(".treeify").treeify('add', testTree, true);
+			$(".treeify").treeify('add', testTree, false);
 		});
 	</script>
 
