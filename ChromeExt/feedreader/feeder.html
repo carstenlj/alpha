@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Feeder</title>
+<link rel="stylesheet" type="text/css" href="feeder.css" />
+<script type="text/javascript" src="jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="feeder.js"></script>
+</head>
+
+<body>
+<!-- LEFT PANEL -->
+<div class="panel">
+	<h2 class="panel-header">News</h2>
+	<ul class="feed-list">
+	</ul>
+</div>
+
+<!-- NEWS CONTENT -->
+<div class="content">
+
+	<!-- ITEM TEMPLATE -->
+	<script id="item-template" type="text/html">
+		<div class="item-container">
+			<a href="http://www.dr.dk">
+				<h2 data-field="title">Title</h2>
+				<p data-field="info" class="lite"></p>
+				<p class="description" data-field="description"></p>	
+			</a>
+		</div>
+	</script>
+	
+</div>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+﻿@width-panel: 450px;
+
+@font-header: "Calibri Light", Calibri, Verdana;
+@font-text: Calibri, Verdana;
+
+@color-item: #F8F8F8;
+@color-panel: #F0F0F0;
+@color-text-lite: #999;
+@color-text: #555;
+@color-header: #333;
+@color-link: #318EE4;
+@color-border: #DDD;
+
+body {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	font-family: @font-text;
+	font-size: 13px;
+	color: @color-text;
+}
+
+a {
+	color: @color-link;
+	text-decoration: none;
+
+}
+a:visited {
+	color: @color-header;
+}
+
+p {
+	margin: 4px 0 0 0;
+	line-height: 18px;
+	color: @color-text;	
+}
+
+ul {
+	padding: 0;
+	line-height: 18px;
+}
+
+li {
+	list-style: none;
+}
+
+.lite {
+	color: @color-text-lite;
+}
+
+h2 {
+	margin: 0;
+	font-family: @font-header;
+	font-weight: normal;
+	font-size: 24px;
+}
+
+.panel-header {
+	font-size: 36px;
+	color: @color-header;
+}
+
+.panel {
+	padding: 16px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: @width-panel;
+	background-color: @color-panel;
+	border-right: 2px solid @color-border;
+}
+
+.feed-list {
+
+}
+	
+.content {
+	left: @width-panel + 32px;
+	display: block;
+	padding: 0 16px;
+	overflow-y:scroll;
+	position:absolute;
+	height: 100%;
+}
+
+.description {
+	//white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-height: 54px;
+}
+
+.item-container {
+	background-color: @color-item;
+	border-bottom: 2px solid @color-border;
+	padding: 8px;
+	margin-bottom: 16px;
+
+	&:hover {
+		background-color: #FFF
+	}
+}

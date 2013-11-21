@@ -1,0 +1,24 @@
+{
+	// Basic metadata
+	"manifest_version": 2,
+	"name": "Feeder",
+	"description": "RSS Feed Reader",
+	"version": "1.0",
+	
+	// Event script used for opening main page
+	"background": {
+		"scripts": ["eventPage.js"],
+		"persistent": false
+	},
+	  
+	// Button appearance
+	"browser_action": {
+		"default_icon": "icon.png",	// Button icon
+		"default_title": "Feeder"	// Button tooltip
+	},
+
+	// Permissions (required for cross-domain AJAX requests)
+	"permissions": [
+		"http://*/"
+	]
+}
