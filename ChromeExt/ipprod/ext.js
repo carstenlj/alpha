@@ -1,1 +1,1 @@
-$('#mainForm #mainwrapper #header').css('background-color', '#F00');
+$('#header').css('background-color', '#F00');

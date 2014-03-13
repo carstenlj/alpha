@@ -6,7 +6,7 @@
   "version": "1.0",
   "content_scripts": [
     {
-      "matches": ["*://*.ipapercms.dk/*"],
+      "matches": ["*://*.ipapercms.dk/*", "*://*.ipaperus.com/*"],
       "js": ["jquery.js", "ext.js"]
     }
   ],
