@@ -3,7 +3,7 @@
 
   "name": "iPaper CMS Dev",
   "description": "Does stuff",
-  "version": "1.0",
+  "version": "1.1",
   "content_scripts": [
     {
       "matches": ["*://*.ipapercms.dk/*", "*://*.ipaperus.com/*"],
